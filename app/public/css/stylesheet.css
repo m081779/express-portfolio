@@ -1,0 +1,341 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+	font-family: 'Press Start 2P', cursive;
+	overflow: hidden;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0px 2px 30px #fff;
+}
+
+a:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+canvas {
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: -1;
+	background: #131862; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, 	#131862, #000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, 	#131862, #000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, 	#131862, #000); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, 	#131862, #000); /* Standard syntax */
+}
+
+.main-heading {
+	font-size: 30px;
+	border: 1px solid white;
+	display:inline-block;
+	margin-bottom: 30px;
+	padding: 10px;
+	background-color: #D9313F;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	text-shadow: -1px 1px 5px #fff;
+}
+
+aside  {
+	display: inline;
+	transform: rotate(90deg);
+	position:fixed;
+	top: 0;	
+	right: 0;
+	margin:330px -150px 0 0;
+	text-shadow: 0px 2px 30px #fff;
+}
+
+aside ul li {
+	transform: rotate(-90deg);
+	margin: 20px;
+	display: inline-block;
+	transition: transform 300ms ease-in-out, text-shadow 300ms ease-in-out;
+}
+
+aside a {
+	color: #fff;
+}
+
+
+aside .social-icon:hover {
+	transform:scale(1.8) rotate(-90deg);
+	color: #fff;
+	text-shadow: 0px 2px 30px #fff;
+}
+
+.main-img {
+	float: left;
+	margin:0 50px 37px 0;
+	height: 270px;
+}
+
+img {
+	transform: translateY(4px);
+}
+
+.img-container:hover img {
+	transform: scale(1.2) translateY(15px);
+}
+
+.img-container:hover .img-heading {
+	transform: translate(0,0);
+}
+
+.img-shadow {
+	box-shadow: -7px 7px 20px 2px rgba(0,0,0,0.5);
+}
+
+.isActive {
+	transform: rotate(90deg) translateY(-40px);
+}
+
+.target {
+	height: 100px;
+}
+
+.target:hover a {
+	transform: rotate(90deg) translateY(-40px);	
+	text-shadow: 2px 2px 30px #fff;
+}
+
+.target:active a {
+	transform: rotate(90deg) translateY(-40px) scale(1.05);
+}
+
+nav ul li {
+	text-align: center;
+	display: inline-block;
+	line-height: 65px;
+	font-weight: 600;
+	-webkit-font-smoothing: antialiased;
+	color: #fff;
+	margin-left: 15px;
+	transition: transform 300ms ease-in-out;
+	transform: rotate(0deg);
+	font-family: 'Press Start 2P', cursive;
+	font-size: 15px;
+}
+
+
+nav ul {
+	list-style: none;
+	float: right;
+	margin: 40px 130px;
+	text-shadow: 0px 2px 30px #fff;
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	transition: all 300ms ease-in-out;
+	transform-origin: left;
+	pointer-events: visiblePainted;
+}
+
+nav {
+	position: fixed;
+	transform: rotate(-90deg) translateX(-100%);
+	transform-origin: left top;
+	width: 100vh;
+
+}
+
+.main-content {
+	height: 95%;
+	position: relative;
+	background-color: #EAEAEA;
+	margin:100px auto 100px auto;
+	padding: 50px;
+	font-size: 15px;
+	/*box-shadow: 0px 1px 80px 2px rgba(0,0,0,0.5);*/
+	width: 100%;
+	line-height: 1.5em;
+	transition: transform 500ms ease-in-out;
+}
+
+#about-text {
+	line-height: 20px;
+	font-size: 13px;
+}
+
+.img-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.img-container {
+	/*height: 200px;	*/
+	width: 32%;	
+	position: relative;
+	overflow: hidden;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.img-container img {
+	transition: transform 300ms ease-in-out;
+}
+
+.img-heading {
+	position: absolute;
+	color: white;
+	background-color: #D9313F;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	width: 100%;	
+	bottom: 20px;
+	padding: 10px ;
+	opacity: 0.9;
+	z-index: 100;
+	transform-origin: bottom left;
+	transition: transform 300ms ease-in-out;
+	transform: rotate(-180deg) translate(100px,-200px);
+	font-weight: 600;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clearfix::after {
+	Content: " ";
+	Display: block;
+	Clear: both;
+}
+
+
+/****************form elements******************/
+
+
+
+.input-field {
+	display: block;
+	background-color: #EAEAEA;
+	border: none;
+	width: 100%;
+	border-bottom: solid 1px gray;
+	line-height: 30px;
+	font-size: 30px;
+	height: 3em;
+	opacity: 1;
+	transition: opacity 300ms ease-in-out;
+	font-family: monospace;
+	color: #777;
+}
+
+.input-field:focus {
+	background: #D9313F;
+	opacity: 0.6;
+	outline: none;
+	color: white;
+}
+
+.input-field:hover {
+	color: white;
+}
+
+.input-field:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #EAEAEA inset !important;
+}
+
+
+#submit {
+	background-color: gray;
+	border: 1px solid #EAEAEA;
+	color: #EAEAEA;
+	margin-top: 15px;
+	transition: color 300ms ease-in-out, border 300ms ease-in-out, background-color 300ms ease-in-out;
+	margin-bottom: 120px;
+	padding: 15px 30px;
+}
+
+#submit:hover {
+	background-color: #D9313F;
+	color: white;
+	border: 1px solid gray;
+}
+
+textarea {
+	margin-bottom: 20px;
+}
+
+form {
+	width: 50%;
+}
+
+footer {
+	height: 80px;	
+	width: 100%;
+	margin: 0 auto;	
+	background-color: #777;
+	color: #ddd;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	line-height: 80px;
+	border-top: 5px solid #D9313F;
+}
+
+/*******************Cube code**********************/
+
+.wrapper {
+	perspective: 100000px;
+	position: relative;
+	margin:auto;
+	width: 1000px;		
+	height: 100%;
+	/*padding-top: 1%;*/
+}
+
+#cube {
+	transform: scale(0.9);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	position: absolute;
+	transition: all 2s ease;
+}
+
+#about {
+	width: 1000px;
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;
+	transform: rotateY(0deg) translateZ(500px);
+}
+
+#portfolio {
+	width: 1000px;
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;	
+	transform: rotateY(90deg) translateZ(500px); 	
+}
+
+#contact {
+	width: 1000px;
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;
+	transform: rotateY(-90deg) translateZ(500px); 
+}

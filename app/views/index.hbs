@@ -1,0 +1,142 @@
+
+	<nav>
+		<ul>
+			<li class="contact rotater"><div class="target"><a href="#contact" class="cubeRotate">CONTACT</a></div></li>
+			<li class="pipe">|</li>
+			<li iclass="portfolio rotater"><div class="target"><a href="index.html#portfolio" class="cubeRotate">PORTFOLIO</a></div></li>
+			<li class="pipe">|</li>
+			<li class="about rotater"><div class="target"><a href="index.html#about" class="cubeRotate">ABOUT</a></div></li>
+		</ul>
+	</nav>	
+
+	<aside id="socials">
+		<ul>
+
+			<li class="social-icon" id="">
+				<a href="https://www.facebook.com/people/Marco-Principio/100004311826507" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+			</li>
+
+			<li class="social-icon" id="">
+				<a href="https://twitter.com/marco_principio" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+			</li>
+
+			<li class="social-icon" id="">
+				<a href="https://www.linkedin.com/in/marco-principio-30520016" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+			</li>
+
+			<li class="social-icon" id="">
+				<a href="https://github.com/m081779" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+			</li>
+			
+			<li class="social-icon" id="">
+				<a href="https://codepen.io/Principio/" target="_blank"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+			</li>
+
+			<li class="social-icon" id="">
+				<a href="https://stackexchange.com/users/11545358/marco-principio" target="_blank"><i class="fa fa-stack-overflow fa-2x" aria-hidden="true"></i></a>
+			</li>
+
+		</ul>
+	</aside>
+	<div class="wrapper">
+		<figure id="cube">	
+			<section id="about" class="main-content clearfix">
+				<h1 class="main-heading img-shadow">ABOUT ME</h1>
+				<p class="float-left" id="about-text"><img id="main" src="/images/portfolio-pic.jpg" alt="Image of Marco Principio and his wife" class="main-img float-left img-shadow" >Hello, whomever you are, and welcome to my little slice of the world wide web. Feel free to poke around, just make yourself at home! If you would like to see some of my work, please check out my portfolio.
+
+				<br><br>
+				But enough of the formalities, let's get to the meat and potatoes of the matter. Who am I? Well, I'm a guy who likes to make...things. Things of all sorts, but mostly of the pixel-based variety.
+
+				<br><br>
+ 
+				My interest in writing code started with dabbling in writing scripts for microcontrollers, and eventually led to the wonderful world of web development.
+
+				<br><br>
+
+				I am a full stack web developer with experience in all stages of development from design to deployment. 
+
+				<br><br>
+
+				Bookmark this page if you would like to keep tabs on my progress, and if you would like to work with me, then hit me up on my contact form. Thanks, and have an awesome day!</p>
+
+				<br>
+			</section>
+
+
+			<section id="portfolio" class="main-content">
+				<h1 class="main-heading img-shadow">PORTFOLIO</h1>
+				<div class="img-wrapper">	
+					<div class="img-container img-shadow" id="item1">
+						<h3 class="img-heading">Supervillain Hangman</h3>
+						<a href="https://m081779.github.io/Hangman-Game/" target="_blank"><img src="/images/supervillain300x200.jpg" alt="Screen capture of Supervillain hangman game"></a>
+					</div>
+					<div class="img-container img-shadow" id="item5">
+						<h3 class="img-heading">Draw with Rainbows</h3>
+						<a href="https://m081779.github.io/Canvas-rainbow-draw/"  target="_blank"><img src="/images/draw300x200.jpg" alt="Screen capture of HTML5 rainbow drawing animation"></a>
+					</div>
+					<div class="img-container img-shadow" id="item3">
+						<h3 class="img-heading">BUGZ: Fight or Die!</h3>
+						<a href="https://m081779.github.io/week-4-game/" target="_blank"><img src="/images/bugz300x200.jpg" alt="Screen capture of BUGZ RPG"></a>
+					</div>
+					<div class="img-container img-shadow" id="item4">
+						<h3 class="img-heading">HTML5 Canvas ball animation</h3>
+						<a href="https://m081779.github.io/bouncing-balls/" target="_blank"><img src="/images/balls300x200.jpg" alt="Screen capture of HTML5 Canvas ball animation"></a>
+					</div>
+					<div class="img-container img-shadow" id="item2">
+						<h3 class="img-heading">Poke-Map Challenge</h3>
+						<a href="https://m081779.github.io/PokeRPG/" target="_blank"><img src="/images/poke300x200.jpg" alt="Screen capture of Poke-Map Challenge RPG"></a>
+					</div>
+					<div class="img-container img-shadow" id="item6">
+						<h3 class="img-heading">Trivia Game</h3>
+						<a href="https://m081779.github.io/TriviaGame/" target="_blank"><img src="/images/trivia300x200.jpg" alt=""></a>
+					</div>
+				</div>
+			</section>
+		
+
+
+			<section id="contact" class="main-content">
+				<h1 class="main-heading img-shadow">CONTACT ME</h1>
+				<form>
+					<input type="text" id="name" placeholder="Name:" class="input-field" />
+					<input type="email" id="email" placeholder="E-mail address:" class="input-field" />
+					<input type="tel" id="number" placeholder="Phone Number:" class="input-field" />
+					{{!-- <input name="human" placeholder="*What is 2+2? (Anti-spam)" class="input-field"> --}}
+					<br><br>
+					<textarea id="message" value="Message" class="input-field" placeholder="Message:"></textarea>
+					<button type="submit" id="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		Send</button>
+					
+				</form>
+			
+			</section>
+		</figure>
+	</div>
+
+	<canvas></canvas>
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+
+    <script src="/js/canvasScript.js"></script>
+    <script>
+		
+		$('#submit').on('click', function () {
+			event.preventDefault();
+			let message = {};
+			message.name = $('#name').val().trim();
+			message.email = $('#email').val().trim();
+			message.number = $('#number').val().trim();
+			message.message = $('#message').val().trim();
+			console.log(message)
+			$.ajax("/email", {
+				type: 'POST',
+				data: message
+			}).done(function(data) {
+		        console.log(data);
+	      	});
+	      	$('#name, #email, #number, #message').val('');
+		});
+	</script>

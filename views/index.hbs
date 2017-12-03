@@ -106,12 +106,15 @@
 					<input type="email" id="email" placeholder="E-mail address:" class="input-field" />
 					<input type="tel" id="number" placeholder="Phone Number:" class="input-field" />
 					<br><br>
-					<textarea id="message" value="Message" class="input-field" placeholder="Message:"></textarea>
+					<textarea id="text" value="Message" class="input-field" placeholder="Message:"></textarea>
 					<button type="submit" id="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		Send</button>
 					
 				</form>
-			
+				<div class="contactInfo">
+					<p id="infoText">If you would like to work together (or if you just want a really great chocolate chip cookie recipe) hit me up!</p>
+				</div>
+				<img id="cookie" src="/images/cookie.png" alt="chocolate chip cookie">
 			</section>
 		</figure>
 	</div>
@@ -125,21 +128,50 @@
 
     <script src="/js/canvasScript.js"></script>
     <script>
-		
+		function checkInput() {
+			let counter = 0
+			let args = Array.prototype.slice.call(arguments);
+			args.forEach(item => {
+				let placeholder = $(item).attr('placeholder');
+				if ($(item).val().trim()==='') {
+					$(item).attr('placeholder', 'Pretty please enter!');
+					setTimeout(()=>{$(item).attr('placeholder', placeholder);}, 1000*2);
+				} else {
+					counter++
+					$(item).attr('placeholder', placeholder);
+				}
+			});
+			let bool =  counter===4 ? true : false;
+			return bool;
+		}
+
+		function clearInputs() {
+			let args = Array.prototype.slice.call(arguments);
+			args.forEach(item => $(item).val(''));
+		}
+
 		$('#submit').on('click', function () {
 			event.preventDefault();
 			let message = {};
-			message.name = $('#name').val().trim();
-			message.email = $('#email').val().trim();
-			message.number = $('#number').val().trim();
-			message.message = $('#message').val().trim();
-			console.log(message)
-			$.ajax("/email", {
-				type: 'POST',
-				data: message
-			}).done(function(data) {
-		        console.log(data);
-	      	});
-	      	$('#name, #email, #number, #message').val('');
+			let valid = checkInput('#name','#email', '#number', '#text');
+			console.log(valid)
+			if(valid) {
+				message.name = $('#name').val().trim();
+				message.email = $('#email').val().trim();
+				message.number = $('#number').val().trim();
+				message.text = $('#text').val().trim();
+				clearInputs('#name','#email', '#number', '#text');
+				console.log(message)
+				$.ajax("/email", {
+					type: 'POST',
+					data: message
+				}).done(function(data) {
+					let firstName = message.name.split(' ');
+					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
+					let str = `Your message was sent successfully, ${firstName}. Thanks for contacting me, I will be in touch shortly!`
+			        $('#infoText').text(str)
+			        $('#cookie').addClass('animateCookie');
+		      	});
+			}
 		});
 	</script>

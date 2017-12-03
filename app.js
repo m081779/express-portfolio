@@ -1,29 +1,27 @@
-var express = require('express');
-var path = require('path');
-// var favicon = require('serve-favicon');
-// var logger = require('morgan');
-// var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+
+const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const app = express();
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-// var email = require('./routes/email');
-let message = {};
+const email = require('./routes/email');
+const index = require('./routes/index');
 
-var app = express();
-var PORT = process.env.PORT || 3000;
-// view engine setup
+app.use('/email', email);
+app.use('/', index);
+
+const PORT = process.env.PORT || 3000;
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-// app.use(logger('dev'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.post('/email', function(req, res) {
   message = req.body;
   if (message) {
@@ -32,10 +30,8 @@ app.post('/email', function(req, res) {
   else {
     console.log('no mail.');
   }
+  res.status(200).end();
 });
-app.use('/', index);
-app.use('/users', users);
-// app.use('/email', email);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,22 +63,21 @@ function mail() {
   });
 
   let mailOptions = {
-      from: '"'+message.name+'" <marcoprincipio@hotmail.com>',
+      from: `"${message.name}" <marcoprincipio@hotmail.com>`,
       to: 'marcoprincipio@hotmail.com', 
       subject: 'New contact from your portfolio site!',
-      text: 'From: '+ message.name+ 'email' +message.email+'message'+ message.text,
-      html: '<b>From: ' + message.name + '<br>email: ' + message.email + '<br>Phone Number: ' + message.number + '<br>message: '+ message.text+'</b>' // html body
-  };
-
+      text: `From: ${message.name} email: ${message.email} Phone Number: ${message.number} message: ${message.text}`,
+      html: `<b>From: ${message.name}<br> <b>email: ${message.email}<br> <b>Phone Number: ${message.number}<br> <b>message: ${message.text}`
+  }
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
           return console.log(error);
       }
       console.log('Message sent: %s', info.messageId);
+
   });
 }
 
 app.listen(PORT, function () {
 	console.log('listening on http://localhost:'+PORT)
 });
-module.exports = app;

@@ -241,26 +241,38 @@ nav {
 	position: absolute;
 	top: 5px;
 	right: 10px;
-	cursor: pointer;;;;
+	cursor: pointer;
 }
 
+
+.contactInfo {
+	width: 40%;
+    height: 50%;
+    position: absolute;
+    top: 18%;
+    right: 5%;
+    text-align: center;
+    padding: 5% 0%;
+    font-size: 20px;
+    line-height: 38px;
+    border: 1px solid black;
+}
 /****************form elements******************/
 
 
 
 .input-field {
-	display: block;
-	background-color: #EAEAEA;
-	border: none;
-	width: 100%;
-	border-bottom: solid 1px gray;
-	line-height: 30px;
-	font-size: 30px;
-	height: 3em;
-	opacity: 1;
-	transition: opacity 300ms ease-in-out;
-	font-family: monospace;
-	color: #777;
+    display: block;
+    background-color: #EAEAEA;
+    border: none;
+    width: 100%;
+    border-bottom: solid 1px gray;
+    line-height: 30px;
+    font-size: 22px;
+    height: 4em;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    color: #777;
 }
 
 .input-field:focus {
@@ -363,4 +375,35 @@ footer {
 	display: block;
 	position: absolute;
 	transform: rotateY(-90deg) translateZ(500px); 
+	overflow: hidden;
+
+}
+
+#cookie {
+	position: absolute;
+	right: 9%;
+	bottom: -40%;	
+}
+
+.animateCookie {
+	animation-name: cookie;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+	animation-timing-function: ease;
+}
+
+@keyframes cookie{
+	0% {
+		bottom: -40%;
+	}
+	
+	30%, 50%, 70% {
+		bottom: 0%;
+	}
+
+	100% {
+		bottom: -40%;
+	}
 }

@@ -33,9 +33,13 @@ document.onkeyup = function (event) {
 		src.src  = "../audio/Contra.mp3";
 		snd.appendChild(src);
 		snd.play();
-		alert('Congratulations! 30 extra lives!');
+		$('.contraModal').addClass('contraModalShow');
 	}
 }
+
+$('#close').on('click', function () {
+	$('.contraModal').removeClass('contraModalShow');
+})
 
 $('body').on('click','.cubeRotate', function () {
 

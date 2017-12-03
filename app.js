@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.post('/email', function(req, res) {
   message = req.body;
-  if (req.body) {
+  if (message) {
     mail();
   }
   else {
@@ -70,8 +70,8 @@ function mail() {
       from: '"'+message.name+'" <marcoprincipio@hotmail.com>',
       to: 'marcoprincipio@hotmail.com', 
       subject: 'New contact from your portfolio site!',
-      text: 'From: '+ message.name+ 'email' +message.email+'message'+ message.message,
-      html: '<b>From: ' + message.name + '<br>email: ' + message.email + '<br>Phone Number: ' + message.number + '<br>message: '+ message.message+'</b>' // html body
+      text: 'From: '+ message.name+ 'email' +message.email+'message'+ message.text,
+      html: '<b>From: ' + message.name + '<br>email: ' + message.email + '<br>Phone Number: ' + message.number + '<br>message: '+ message.text+'</b>' // html body
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

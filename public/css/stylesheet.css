@@ -218,6 +218,31 @@ nav {
 	Clear: both;
 }
 
+.contraModal {
+	background: red;
+	color: white;
+	display: inline-block;
+	padding: 25px;
+	border-radius: 0 0 10px 10px;
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	transform: translateX(-50%);
+	text-shadow: -1px 1px 5px #fff;
+	margin-top: -75px;
+	transition: margin-top 1s ease;
+}
+
+.contraModalShow {
+	margin-top: 0;
+}
+
+#close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;;;;
+}
 
 /****************form elements******************/
 

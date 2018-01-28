@@ -1,22 +1,21 @@
 var express = require('express');
 var router = express.Router();
-
+const nodemailer = require('nodemailer');
 
 let message = {};
 
-router.post('/email', function(req, res, next) {
-	message = req.body;
-	console.log(message)
+router.post('/', function(req, res) {
 	if (req.body) {
-		mail();
+		mail(req.body);
 	}
 	else {
-		console.log('no mail.');
+		let error = new Error('Something went wrong with your message');
+		res.json(error)
 	}
 	res.status(200).end();
 });
 
-function mail() {
+function mail(message) {
 	let transporter = nodemailer.createTransport({
 		host: 'smtp.live.com',
 		port: 587,
@@ -29,7 +28,7 @@ function mail() {
 
 	let mailOptions = {
 		from: `"${message.name}" <marcoprincipio@hotmail.com>`,
-		to: 'marcoprincipio@hotmail.com', 
+		to: 'marcoprincipio@hotmail.com',
 		subject: 'New contact from your portfolio site!',
 		text: `From: ${message.name} email: ${message.email} Phone Number: ${message.number} message: ${message.text}`,
 		html: `<b>From: ${message.name}<br> <b>email: ${message.email}<br> <b>Phone Number: ${message.number}<br> <b>message: ${message.text}`

@@ -42,24 +42,29 @@ $(document).ready(function () {
 		event.preventDefault();
 		let message = {};
 		let valid = checkInput('#name','#email', '#number', '#text');
-		console.log(valid)
 		if(valid) {
 			message.name = $('#name').val().trim();
 			message.email = $('#email').val().trim();
 			message.number = $('#number').val().trim();
 			message.text = $('#text').val().trim();
 			clearInputs('#name','#email', '#number', '#text');
-			console.log(message)
 			$.ajax("/email", {
 				type: 'POST',
-				data: message
-			}).done(function(data) {
-				let firstName = message.name.split(' ');
-				firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
-				let str = `Your message was sent successfully, ${firstName}. Thanks for contacting me, I will be in touch shortly!`
-						$('#infoText').text(str)
-						$('#cookie').addClass('animateCookie');
-					});
+				data: message,
+				success: function (data){
+					let firstName = message.name.split(' ');
+					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
+					let str = `Your message was sent successfully, ${firstName}. Thanks for contacting me, I will be in touch shortly!`
+					$('#infoText').text(str)
+					$('#cookie').addClass('animateCookie');
+				},
+				error: function (error){
+					let firstName = message.name.split(' ');
+					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
+					let str = `Your message was not sent successfully, ${firstName}. Please try again soon!`
+					$('#infoText').text(str)
+				}
+			});
 		}
 	});
 
@@ -95,20 +100,17 @@ $(document).ready(function () {
 		if (value==='PORTFOLIO'){
 			$('#cube').css({
 				'transform': 'rotateY(-90deg) scale(0.9)',
-				// 'padding-top': '2.5%'
 			});
 		}
 		else if (value==='CONTACT') {
 			$('#cube').css({
 				'transform': 'rotateY(90deg) scale(0.9)',
-				// 'padding-top': '2.5%'
 			});
 		}
 
 		else if (value==='ABOUT') {
 			$('#cube').css({
 				'transform': 'rotateY(0deg) scale(0.9)',
-				// 'padding-top': '2.5%'
 			});
 		}
 	});

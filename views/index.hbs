@@ -71,89 +71,14 @@
 				<h1 class="main-heading img-shadow">PORTFOLIO</h1>
 				<div class="img-wrapper">
 
-					<div class="img-container img-shadow" id="item5">
-						<a href="https://mongo-scraper-principio.herokuapp.com/"  target="_blank">
-							<h3 class="img-heading">Mongo NYT Scraper</h3>
-							<img src="/images/scraper300x200.jpg" alt="Screen capture of Mongo NYT Scraper">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="http://nyt-react-map.herokuapp.com/" target="_blank">
-							<h3 class="img-heading">React NYT Article Search</h3>
-							<img src="/images/nytreact300x200.jpg" alt="Screen capture of React NYT article search">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://principio-movie-list.herokuapp.com/" target="_blank">
-							<h3 class="img-heading">Watcha-Da-Movie</h3>
-							<img src="/images/movie300x200.jpg" alt="Screen capture of Watcha-Da-Movie">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://map-sweet-talk.herokuapp.com/" target="_blank">
-							<h3 class="img-heading">Sweet Talk Dating</h3>
-							<img src="/images/sweet300x200.jpg" alt="Screen capture of Sweet talk dating">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item2">
-						<a href="https://m081779.github.io/PokeRPG/" target="_blank">
-							<h3 class="img-heading">Poke-Map Challenge</h3>
-							<img src="/images/poke300x200.jpg" alt="Screen capture of Poke-Map Challenge RPG">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item6">
-						<a href="https://m081779.github.io/TriviaGame/" target="_blank">
-							<h3 class="img-heading">Trivia Game</h3>
-							<img src="/images/trivia300x200.jpg" alt="">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://m081779.github.io/Hangman-Game/" target="_blank">
-							<h3 class="img-heading">Supervillain Hangman</h3>
-							<img src="/images/supervillain300x200.jpg" alt="Screen capture of Supervillain hangman game">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item3">
-						<a href="https://m081779.github.io/week-4-game/" target="_blank">
-							<h3 class="img-heading">BUGZ: Fight or Die!</h3>
-							<img src="/images/bugz300x200.jpg" alt="Screen capture of BUGZ RPG">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item4">
-						<a href="https://m081779.github.io/bouncing-balls/" target="_blank">
-							<h3 class="img-heading">HTML5 Canvas ball animation</h3>
-							<img src="/images/balls300x200.jpg" alt="Screen capture of HTML5 Canvas ball animation">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://m081779.github.io/Canvas-rainbow-draw/" target="_blank">
-							<h3 class="img-heading">HTML5 Canvas Draw</h3>
-							<img src="/images/draw300x200.jpg" alt="Screen capture of canvas draw">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://github.com/m081779/Node-Hangman" target="_blank">
-							<h3 class="img-heading">Node CLI Hangman</h3>
-							<img src="/images/nodehangman300x200.jpg" alt="Screen capture of Node CLI Hangman">
-						</a>
-					</div>
-
-					<div class="img-container img-shadow" id="item1">
-						<a href="https://m081779.github.io/Train-Scheduler/" target="_blank">
-							<h3 class="img-heading">Train Scheduler</h3>
-							<img src="/images/train300x200.jpg" alt="Screen capture of train scheduler">
-						</a>
-					</div>
+					{{#each projects}}
+						<div class="img-container img-shadow" id="item5">
+							<a href={{url}}  target="_blank">
+								<h3 class="img-heading">{{this.title}}</h3>
+								<img src={{img}} alt="Screen capture of {{title}}">
+							</a>
+						</div>
+					{{/each}}
 
 				</div>
 			</section>
@@ -170,7 +95,6 @@
 					<textarea id="text" value="Message" class="input-field" placeholder="Message:"></textarea>
 					<button type="submit" id="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		Send</button>
-
 				</form>
 				<div class="contactInfo">
 					<p id="infoText">If you would like to work together (or if you just want a really great chocolate chip cookie recipe) hit me up!</p>

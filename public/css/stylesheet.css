@@ -32,8 +32,15 @@ canvas {
 }
 
 .error {
-	margin: 100px auto;
+	height: 100%;
+	width: 100%;
+	background: #282828;
+	margin: 0 auto;
 	text-align: center;
+}
+
+.error img {
+	margin-top: 100px;
 }
 
 .main-heading {
@@ -439,6 +446,8 @@ footer {
 
 
 /**************cookie code**************/
+
+
 #cookie {
 	position: absolute;
 	right: 9%;

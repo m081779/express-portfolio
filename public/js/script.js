@@ -1,20 +1,26 @@
 $(document).ready(function () {
-	$("a").click(function (event) {
 
-		if (this.hash!=="") {
-			event.preventDefault();
-			var hash = this.hash;
+	//soft scroll code not needed for cube design
+	// $("a").click(function (event) {
+	//
+	// 	if (this.hash!=="") {
+	// 		event.preventDefault();
+	// 		var hash = this.hash;
+	//
+	// 		$('html').animate({
+	// 			scrollTop: $(hash).offset().top
+	//
+	// 		},500, function () {
+	// 			window.location.hash = hash;
+	// 		});
+	// 	}
+	//
+	// });
 
-			$('html').animate({
-				scrollTop: $(hash).offset().top
 
-			},500, function () {
-				window.location.hash = hash;
-			});
-		}
-
-	});
-
+// ================================================================
+// ======== Form submission code ==================================
+// ================================================================
 
 	function checkInput() {
 		let counter = 0
@@ -68,7 +74,9 @@ $(document).ready(function () {
 		}
 	});
 
-
+// ================================================================
+// ======== Contra easter egg code ================================
+// ================================================================
 
 	var letterArr = [];
 
@@ -93,6 +101,11 @@ $(document).ready(function () {
 	$('#close').on('click', function () {
 		$('.contraModal').removeClass('contraModalShow');
 	})
+
+
+// ================================================================
+// ======== Cube rotation code ====================================
+// ================================================================
 
 	$('body').on('click','.cubeRotate', function () {
 

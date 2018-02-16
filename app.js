@@ -1,8 +1,8 @@
-const express = require('express');
-const path = require('path');
+const express    = require('express');
+const path       = require('path');
 const bodyParser = require('body-parser');
-const logger = require('morgan')
-const app = express();
+const logger     = require('morgan')
+const app        = express();
 
 //setting up morgan middleware
 app.use(logger('dev'));
@@ -20,10 +20,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //bringing in router
-const email = require('./routes/email');
 const index = require('./routes/index');
-app.use('/email', email);
+const email = require('./routes/email');
 app.use('/', index);
+app.use('/email', email);
+
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -32,7 +33,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handler
+//error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;

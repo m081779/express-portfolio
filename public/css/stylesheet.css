@@ -413,6 +413,7 @@ footer {
 }
 
 #about {
+	border: 5px solid #777;
 	width: 1000px;
 	height: 100%;
 	margin: 0;
@@ -423,6 +424,7 @@ footer {
 }
 
 #portfolio {
+	border: 5px solid #777;
 	width: 1000px;
 	height: 100%;
 	margin: 0;
@@ -433,6 +435,7 @@ footer {
 }
 
 #contact {
+	border: 5px solid #777;
 	width: 1000px;
 	height: 100%;
 	margin: 0;

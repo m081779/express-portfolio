@@ -19,7 +19,7 @@ let currentScore = tail - 5;
 
 //function to initialize the start state of the game
 function initialize() {
-
+  console.log('firing');
   //creating the start button
   high.innerHTML = highScore;
   current.innerHTML = currentScore;
@@ -139,7 +139,11 @@ function keyPress(event){
       break;
   }
 }
-
+function resetGame(){
+  clearInterval(gameInterval);
+  ctx.clearRect(0,0, window.innerWidth, window.innerHeight);
+  initialize();
+}
 //function to start the recursive game loop.
 function startGame() {
   ctx.clearRect(0,0, window.innerWidth, window.innerHeight);

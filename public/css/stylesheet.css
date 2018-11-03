@@ -149,7 +149,6 @@ nav ul li {
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
-	/* margin-left: 15px; */
 	-webkit-transition: -webkit-transform 300ms ease-in-out;
 	transition: -webkit-transform 300ms ease-in-out;
 	transition: transform 300ms ease-in-out;
@@ -157,14 +156,14 @@ nav ul li {
 	-webkit-transform: rotate(0deg);
 	        transform: rotate(0deg);
 	font-family: 'Press Start 2P', cursive;
-	font-size: 11px;
+	font-size: 15px;
 }
 
 
 nav ul {
 	list-style: none;
 	float: right;
-	margin: 40px 60px;
+	margin: 40px 140px;
 	text-shadow: 0px 2px 30px #fff;
 }
 
@@ -438,7 +437,6 @@ footer {
 
 #about {
 	border: 5px solid #777;
-	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
@@ -449,7 +447,6 @@ footer {
 
 #portfolio {
 	border: 5px solid #777;
-	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
@@ -460,7 +457,6 @@ footer {
 
 #contact {
 	border: 5px solid #777;
-	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
@@ -472,38 +468,12 @@ footer {
 
 #snake {
 	border: 5px solid #777;
-	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
 	position: absolute;
 	-webkit-transform: rotateY(180deg) translateZ(30vw);
 	        transform: rotateY(180deg) translateZ(30vw);
-	overflow: hidden;
-}
-
-
-#top {
-	border: 5px solid #777;
-	/* width: 100%; */
-	height: 100%;
-	margin: 0;
-	display: block;
-	position: absolute;
-	-webkit-transform: rotateX(270deg) translateZ(30vw);
-	        transform: rotateX(270deg) translateZ(30vw);
-	overflow: hidden;
-}
-
-#bottom {
-	border: 5px solid #777;
-	/* width: 100%; */
-	height: 100%;
-	margin: 0;
-	display: block;
-	position: absolute;
-	-webkit-transform: rotateY(0deg) rotateX(90deg) translateZ(30vw);
-					transform: rotateY(0deg) rotateX(90deg) translateZ(30vw);			
 	overflow: hidden;
 }
 

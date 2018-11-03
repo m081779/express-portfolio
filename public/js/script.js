@@ -90,7 +90,7 @@ $(document).ready(function () {
 // ================================================================
 
 	$('body').on('click','.cubeRotate', function () {
-
+		resetGame();
 		var value = $(this).text();
 		if (value==='PORTFOLIO'){
 			$('#cube').css({

@@ -10,7 +10,7 @@ router.post('/', function(req, res) {
 	}
 	else {
 		let error = new Error('Something went wrong with your message');
-		res.json(error)
+		res.json(error);
 	}
 	res.status(200).end();
 });
@@ -32,7 +32,7 @@ function mail(message) {
 		subject: 'New contact from your portfolio site!',
 		text: `From: ${message.name} email: ${message.email} Phone Number: ${message.number} message: ${message.text}`,
 		html: `<b>From: ${message.name}<br> <b>email: ${message.email}<br> <b>Phone Number: ${message.number}<br> <b>message: ${message.text}`
-	}
+	};
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
 			return console.log(error);

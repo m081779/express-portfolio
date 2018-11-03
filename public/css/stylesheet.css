@@ -21,7 +21,7 @@ a:focus {
 	text-decoration: none;
 }
 
-canvas {
+canvas#background {
 	position: fixed;
 	top:0;
 	left:0;
@@ -29,6 +29,13 @@ canvas {
 	background: #131862; /* For browsers that do not support gradients */ /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */
 	background: -webkit-gradient(linear, 	left top, right bottom, 	from(#131862), to(#000));
 	background: linear-gradient(to bottom right, 	#131862, #000); /* Standard syntax */
+}
+
+canvas#snakeGame {
+	background: black;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid white;
 }
 
 .error {
@@ -142,7 +149,7 @@ nav ul li {
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
-	margin-left: 15px;
+	/* margin-left: 15px; */
 	-webkit-transition: -webkit-transform 300ms ease-in-out;
 	transition: -webkit-transform 300ms ease-in-out;
 	transition: transform 300ms ease-in-out;
@@ -150,14 +157,14 @@ nav ul li {
 	-webkit-transform: rotate(0deg);
 	        transform: rotate(0deg);
 	font-family: 'Press Start 2P', cursive;
-	font-size: 15px;
+	font-size: 11px;
 }
 
 
 nav ul {
 	list-style: none;
 	float: right;
-	margin: 40px 130px;
+	margin: 40px 60px;
 	text-shadow: 0px 2px 30px #fff;
 }
 
@@ -183,18 +190,18 @@ nav {
 }
 
 .main-content {
-	height: 95%;
-	position: relative;
+	/* height: 95%; */
+	/* position: relative; */
 	background-color: #EAEAEA;
-	margin:100px auto 100px auto;
+	/* margin:100px auto 100px auto; */
 	padding: 50px;
-	font-size: 15px;
-	width: 100%;
+	/* font-size: 15px; */
+	/* width: 100%; */
 	line-height: 1.5em;
 	-webkit-transition: -webkit-transform 500ms ease-in-out;
 	transition: -webkit-transform 500ms ease-in-out;
 	transition: transform 500ms ease-in-out;
-	transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+	/* transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out; */
 }
 
 #about-text {
@@ -281,6 +288,20 @@ nav {
     border: 1px solid black;
 }
 
+.gameBox {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.score-wrapper {
+	display: inline-block;
+	width: 300px;
+	margin: 0;
+}
+
+#currentScoreTitle, #highestScoreTitle {
+	text-align: center;
+}
 
 /**************contra modal**************/
 
@@ -394,9 +415,8 @@ footer {
 	        perspective: 100000px;
 	position: relative;
 	margin:auto;
-	width: 1000px;
-	height: 100%;
-	/*padding-top: 1%;*/
+	width: 60vw;
+	height: 100vh;
 }
 
 #cube {
@@ -410,42 +430,83 @@ footer {
 	position: absolute;
 	-webkit-transition: all 2s ease;
 	transition: all 2s ease;
+	transform-origin: center center;
+}
+.width {
+	width: 100%;
 }
 
 #about {
 	border: 5px solid #777;
-	width: 1000px;
+	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
 	position: absolute;
-	-webkit-transform: rotateY(0deg) translateZ(500px);
-	        transform: rotateY(0deg) translateZ(500px);
+	-webkit-transform: rotateY(0deg) translateZ(30vw);
+	        transform: rotateY(0deg) translateZ(30vw);
 }
 
 #portfolio {
 	border: 5px solid #777;
-	width: 1000px;
+	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
 	position: absolute;
-	-webkit-transform: rotateY(90deg) translateZ(500px);
-	        transform: rotateY(90deg) translateZ(500px);
+	-webkit-transform: rotateY(90deg) translateZ(30vw);
+	        transform: rotateY(90deg) translateZ(30vw);
 }
 
 #contact {
 	border: 5px solid #777;
-	width: 1000px;
+	/* width: 100%; */
 	height: 100%;
 	margin: 0;
 	display: block;
 	position: absolute;
-	-webkit-transform: rotateY(-90deg) translateZ(500px);
-	        transform: rotateY(-90deg) translateZ(500px);
+	-webkit-transform: rotateY(-90deg) translateZ(30vw);
+	        transform: rotateY(-90deg) translateZ(30vw);
 	overflow: hidden;
-
 }
+
+#snake {
+	border: 5px solid #777;
+	/* width: 100%; */
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;
+	-webkit-transform: rotateY(180deg) translateZ(30vw);
+	        transform: rotateY(180deg) translateZ(30vw);
+	overflow: hidden;
+}
+
+
+#top {
+	border: 5px solid #777;
+	/* width: 100%; */
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;
+	-webkit-transform: rotateX(270deg) translateZ(30vw);
+	        transform: rotateX(270deg) translateZ(30vw);
+	overflow: hidden;
+}
+
+#bottom {
+	border: 5px solid #777;
+	/* width: 100%; */
+	height: 100%;
+	margin: 0;
+	display: block;
+	position: absolute;
+	-webkit-transform: rotateY(0deg) rotateX(90deg) translateZ(30vw);
+					transform: rotateY(0deg) rotateX(90deg) translateZ(30vw);			
+	overflow: hidden;
+}
+
 
 
 /**************cookie code**************/

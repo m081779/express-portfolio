@@ -5,6 +5,8 @@
 
 	<nav>
 		<ul>
+			<li class="snake rotater"><div class="target"><a href="#snake" class="cubeRotate">GAME</a></div></li>
+			<li class="pipe">|</li>
 			<li class="contact rotater"><div class="target"><a href="#contact" class="cubeRotate">CONTACT</a></div></li>
 			<li class="pipe">|</li>
 			<li iclass="portfolio rotater"><div class="target"><a href="#portfolio" class="cubeRotate">PORTFOLIO</a></div></li>
@@ -44,9 +46,9 @@
 	</aside>
 	<div class="wrapper">
 		<figure id="cube">
-			<section id="about" class="main-content clearfix">
+			<section id="about" class="main-content clearfix width">
 				<h1 class="main-heading img-shadow">ABOUT ME</h1>
-				<p class="float-left" id="about-text"><img id="main" src="/images/portfolio-pic.jpeg" alt="Image of Marco Principio and his wife" class="main-img float-left img-shadow" >Hello, whomever you are, and welcome to my little slice of the world wide web. Feel free to poke around, just make yourself at home! If you would like to see some of my work, please check out my portfolio.
+				<p class="float-left" id="about-text"><img id="main" src="/images/portfolio-pic.jpeg" alt="Image of Marco Principio and his wife" class="main-img float-left img-shadow">Hello, whomever you are, and welcome to my little slice of the world wide web. Feel free to poke around, just make yourself at home! If you would like to see some of my work, please check out my portfolio.
 
 				<br><br>
 				But enough of the formalities, let's get to the meat and potatoes of the matter. Who am I? Well, I'm a guy who likes to make...things. Things of all sorts, but mostly of the pixel-based variety.
@@ -67,7 +69,7 @@
 			</section>
 
 			{{!-- rendering projects --}}
-			<section id="portfolio" class="main-content">
+			<section id="portfolio" class="main-content width">
 				<h1 class="main-heading img-shadow">PORTFOLIO</h1>
 				<div class="img-wrapper">
 
@@ -85,7 +87,7 @@
 
 
 
-			<section id="contact" class="main-content">
+			<section id="contact" class="main-content width">
 				<h1 class="main-heading img-shadow">CONTACT ME</h1>
 				<form>
 					<input type="text" id="name" placeholder="Name:" class="input-field" />
@@ -102,7 +104,21 @@
 				</div>
 				<img id="cookie" src="/images/cookie.png" alt="chocolate chip cookie">
 			</section>
+
+			<section id="snake" class="main-content width">
+				<h1 class="main-heading img-shadow">SNAKE GAME</h1>
+				<div class="gameBox">
+			    <div class="score-wrapper">
+			    	<h4 id="currentScoreTitle">Current Score: <span id="currentScore"></span></h4>
+			    </div>
+			    <div class="score-wrapper">
+			    	<h4 id="highestScoreTitle">Highest Score: <span id="highScore"></span></h4>
+			    </div>
+			    <canvas id="snakeGame" height="600" width="600"></canvas>
+			  </div>
+			</section>
+
 		</figure>
 	</div>
 
-	<canvas></canvas>
+	<canvas id="background"></canvas>

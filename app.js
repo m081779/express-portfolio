@@ -1,7 +1,7 @@
 const express    = require('express');
 const path       = require('path');
 const bodyParser = require('body-parser');
-const logger     = require('morgan')
+const logger     = require('morgan');
 const app        = express();
 
 //setting up morgan middleware
@@ -47,5 +47,5 @@ app.use(function(err, req, res, next) {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
-	console.log(`The magic is happening on localhost:${PORT}...`)
+	console.log(`The magic is happening on localhost:${PORT}...`);
 });

@@ -1,29 +1,11 @@
 $(document).ready(function () {
 
-	//soft scroll code not needed for cube design
-	// $("a").click(function (event) {
-	//
-	// 	if (this.hash!=="") {
-	// 		event.preventDefault();
-	// 		var hash = this.hash;
-	//
-	// 		$('html').animate({
-	// 			scrollTop: $(hash).offset().top
-	//
-	// 		},500, function () {
-	// 			window.location.hash = hash;
-	// 		});
-	// 	}
-	//
-	// });
-
-
 // ================================================================
 // ======== Form submission code ==================================
 // ================================================================
 
 	function checkInput() {
-		let counter = 0
+		let counter = 0;
 		let args = Array.prototype.slice.call(arguments);
 		args.forEach(item => {
 			let placeholder = $(item).attr('placeholder');
@@ -31,7 +13,7 @@ $(document).ready(function () {
 				$(item).attr('placeholder', 'Pretty please enter!');
 				setTimeout(()=>{$(item).attr('placeholder', placeholder);}, 1000*2);
 			} else {
-				counter++
+				counter++;
 				$(item).attr('placeholder', placeholder);
 			}
 		});
@@ -59,16 +41,16 @@ $(document).ready(function () {
 				data: message,
 				success: function (data){
 					let firstName = message.name.split(' ');
-					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
-					let str = `Your message was sent successfully, ${firstName}. Thanks for contacting me, I will be in touch shortly!`
-					$('#infoText').text(str)
+					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);
+					let str = `Your message was sent successfully, ${firstName}. Thanks for contacting me, I will be in touch shortly!`;
+					$('#infoText').text(str);
 					$('#cookie').addClass('animateCookie');
 				},
 				error: function (error){
 					let firstName = message.name.split(' ');
-					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);;
-					let str = `Your message was not sent successfully, ${firstName}. Please try again soon!`
-					$('#infoText').text(str)
+					firstName = firstName[0].charAt(0).toUpperCase() + firstName[0].slice(1);
+					let str = `Your message was not sent successfully, ${firstName}. Please try again soon!`;
+					$('#infoText').text(str);
 				}
 			});
 		}
@@ -87,7 +69,7 @@ $(document).ready(function () {
 			letterArr.shift();
 		}
 		if (konami.join('')===letterArr.join('')) {
-			document.getElementById('main').setAttribute('src', '../images/contra.jpg')
+			document.getElementById('main').setAttribute('src', '../images/contra.jpg');
 			var snd  = new Audio();
 			var src  = document.createElement("source");
 			src.type = "audio/mpeg";
@@ -96,11 +78,11 @@ $(document).ready(function () {
 			snd.play();
 			$('.contraModal').addClass('contraModalShow');
 		}
-	}
+	};
 
 	$('#close').on('click', function () {
 		$('.contraModal').removeClass('contraModalShow');
-	})
+	});
 
 
 // ================================================================
@@ -112,20 +94,39 @@ $(document).ready(function () {
 		var value = $(this).text();
 		if (value==='PORTFOLIO'){
 			$('#cube').css({
-				'transform': 'rotateY(-90deg) scale(0.9)',
+				'transform': 'rotateY(-90deg) scale(0.9)'
 			});
 		}
 		else if (value==='CONTACT') {
 			$('#cube').css({
-				'transform': 'rotateY(90deg) scale(0.9)',
+				'transform': 'rotateY(90deg) scale(0.9)'
 			});
 		}
 
 		else if (value==='ABOUT') {
 			$('#cube').css({
-				'transform': 'rotateY(0deg) scale(0.9)',
+				'transform': 'rotateY(0deg) scale(0.9)'
 			});
 		}
+
+		else if (value==='GAME') {
+			$('#cube').css({
+				'transform': 'rotateY(180deg) scale(0.9)'
+			});
+		}
+
+		else if (value==='TOP') {
+			$('#cube').css({
+				'transform': 'rotateX(90deg)  scale(0.9)'
+			});
+		}
+
+		else if (value==='BOTTOM') {
+			$('#cube').css({
+				'transform': 'rotateX(-90deg) scale(0.9)'
+			});
+		}
+
 	});
 
 });

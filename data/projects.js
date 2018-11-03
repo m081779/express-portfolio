@@ -16,7 +16,7 @@
   },
   {
     "title": "Watcha-Da-Movie",
-    "url": "https://principio-movie-list.herokuapp.com/",
+    "url": "https://watcha-da-movie.herokuapp.com/",
     "img": "/images/movie300x200.jpg"
   },
   {
